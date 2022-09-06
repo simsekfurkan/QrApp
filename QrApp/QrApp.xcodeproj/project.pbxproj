@@ -11,6 +11,8 @@
 		9023453E28C7794200DAAFBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9023453D28C7794200DAAFBE /* ContentView.swift */; };
 		9023454028C7794500DAAFBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9023453F28C7794500DAAFBE /* Assets.xcassets */; };
 		9023454328C7794500DAAFBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9023454228C7794500DAAFBE /* Preview Assets.xcassets */; };
+		9023454A28C77AAD00DAAFBE /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9023454928C77AAD00DAAFBE /* FirstView.swift */; };
+		90C0BD5928C78B7200C53537 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0BD5828C78B7100C53537 /* ScanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		9023453D28C7794200DAAFBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9023453F28C7794500DAAFBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9023454228C7794500DAAFBE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9023454928C77AAD00DAAFBE /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		90C0BD5828C78B7100C53537 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		9023453A28C7794200DAAFBE /* QrApp */ = {
 			isa = PBXGroup;
 			children = (
+				9023454B28C77AB200DAAFBE /* View */,
 				9023453B28C7794200DAAFBE /* QrAppApp.swift */,
 				9023453D28C7794200DAAFBE /* ContentView.swift */,
 				9023453F28C7794500DAAFBE /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				9023454228C7794500DAAFBE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9023454B28C77AB200DAAFBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9023454928C77AAD00DAAFBE /* FirstView.swift */,
+				90C0BD5828C78B7100C53537 /* ScanView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9023453E28C7794200DAAFBE /* ContentView.swift in Sources */,
+				90C0BD5928C78B7200C53537 /* ScanView.swift in Sources */,
+				9023454A28C77AAD00DAAFBE /* FirstView.swift in Sources */,
 				9023453C28C7794200DAAFBE /* QrAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
