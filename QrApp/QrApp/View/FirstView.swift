@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FirstView: View {
+    @State private var showScanView = false
     var body: some View {
         VStack{
             Spacer()
@@ -31,9 +32,9 @@ struct FirstView: View {
                 .multilineTextAlignment(.center)
                 Spacer()
 //            Button
-                Button {
-                    
-                } label: {
+                Button (action: {
+                    showScanView.toggle()
+                }){
                     //Rectangle 2
                     //Let’s Get Started
                     Text("Let’s Get Started")
@@ -41,10 +42,21 @@ struct FirstView: View {
                         .background(//Rectangle 2
                             RoundedRectangle(cornerRadius: 8)
                                 .fill(Color(#colorLiteral(red: 0.9960784316062927, green: 0.4901960790157318, blue: 0.3333333432674408, alpha: 1)))
-                            .frame(width: 319, height: 58))
+                                .frame(width: 319, height: 58))}
+                        .sheet(isPresented: $showScanView, onDismiss: {
+                            print("Code executed when the sheet dismisses")
+                        }) {
+                            ScanView()
+                        }
                     
                     
-            }
+            
+            
+                
+//                .sheet(isPresented: $showScanView) {
+//                        ScanView()
+//                }
+            
             
             Spacer()
             
