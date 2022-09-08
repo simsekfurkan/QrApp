@@ -13,6 +13,7 @@
 		9023454328C7794500DAAFBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9023454228C7794500DAAFBE /* Preview Assets.xcassets */; };
 		9023454A28C77AAD00DAAFBE /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9023454928C77AAD00DAAFBE /* FirstView.swift */; };
 		90C0BD5928C78B7200C53537 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0BD5828C78B7100C53537 /* ScanView.swift */; };
+		90C0BD5D28C8D50B00C53537 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 90C0BD5C28C8D50B00C53537 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		9023454228C7794500DAAFBE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9023454928C77AAD00DAAFBE /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		90C0BD5828C78B7100C53537 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		90C0BD5A28C8D46E00C53537 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C0BD5D28C8D50B00C53537 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +58,7 @@
 		9023453A28C7794200DAAFBE /* QrApp */ = {
 			isa = PBXGroup;
 			children = (
+				90C0BD5A28C8D46E00C53537 /* Info.plist */,
 				9023454B28C77AB200DAAFBE /* View */,
 				9023453B28C7794200DAAFBE /* QrAppApp.swift */,
 				9023453D28C7794200DAAFBE /* ContentView.swift */,
@@ -97,6 +101,9 @@
 			dependencies = (
 			);
 			name = QrApp;
+			packageProductDependencies = (
+				90C0BD5C28C8D50B00C53537 /* CodeScanner */,
+			);
 			productName = QrApp;
 			productReference = 9023453828C7794200DAAFBE /* QrApp.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 9023452F28C7794200DAAFBE;
+			packageReferences = (
+				90C0BD5B28C8D50B00C53537 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 9023453928C7794200DAAFBE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,6 +296,8 @@
 				DEVELOPMENT_TEAM = 5BC6YM76Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QrApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -315,6 +327,8 @@
 				DEVELOPMENT_TEAM = 5BC6YM76Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QrApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -355,6 +369,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90C0BD5B28C8D50B00C53537 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90C0BD5C28C8D50B00C53537 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C0BD5B28C8D50B00C53537 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9023453028C7794200DAAFBE /* Project object */;
 }
