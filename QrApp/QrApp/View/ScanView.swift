@@ -6,9 +6,26 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct ScanView: View {
+    @State private var isShowingScanner = false
+    @State  var scannedCode : String = ""
+    
+
+    var ScannerSheet : some View{
+        CodeScannerView(
+            codeTypes: [.qr],
+            completion: {result in
+                if case let .success(code) = result {
+                    self.scannedCode = code.string
+                    self.isShowingScanner = false
+                }})
+    }
     var body: some View {
+        
+        
+
         //Rectangle 5
         ZStack {
             HStack{
@@ -23,6 +40,7 @@ struct ScanView: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                         .padding(.trailing, 30)
+                        .padding(.top,30)
                         .frame(maxWidth:0,  maxHeight: .infinity, alignment: .topTrailing)
                         
                         
@@ -63,13 +81,13 @@ struct ScanView: View {
                     .symbolRenderingMode(.palette)
                     .foregroundStyle(.black,Color(#colorLiteral(red: 0.9960784316062927, green: 0.4901960790157318, blue: 0.3333333432674408, alpha: 1)))
                 //Scanning Code...
-                Text("   Scanning Code...").font(.custom("Inter Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.55)))
+                Text("").font(.custom("Inter Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.55)))
              
                 .frame(width: 120.0, height: 120.0)
                 .frame(maxWidth:.infinity,  maxHeight:.infinity, alignment: .center)
                 .padding(.top,230)
             
-                HStack(spacing: 19){
+                HStack(spacing: 25){
                 
                 Image(systemName: "photo.on.rectangle")
                 Image(systemName: "doc.text.fill")
@@ -78,24 +96,46 @@ struct ScanView: View {
                 
                 }.frame(maxWidth:.infinity,  maxHeight:.infinity, alignment: .center)
                 .padding(.top,300)
+                .padding(.leading,1)
              
                 VStack(alignment: .trailing, spacing: 100) {
                     //Place Camera Code
-                    Text("Place Camera Code").font(.custom("Inter Bold", size: 16)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                            .background(RoundedRectangle(cornerRadius: 8)
-                                .fill(Color(#colorLiteral(red: 0.9960784316062927, green: 0.4901960790157318, blue: 0.3333333432674408, alpha: 1)))
-                                        
-                            .frame(width: 319, height: 58))
-                            .frame(maxWidth:.infinity,  maxHeight:.infinity, alignment: .bottom)
-                            .padding(.bottom,90)
-                           
+
+                        
+                        Text(scannedCode)
+                        .frame(maxWidth:.infinity,  maxHeight:.infinity, alignment: .center)
+                        .foregroundColor(.blue)
+                        .onTapGesture {
+                                                 UIApplication.shared.open(URL(string:scannedCode)!)
+                                        }
+                    
+                    
+
+                        
+                    
+                    Button("Place Camera Code")
+                        {
+                            self.isShowingScanner = true
                             
-                            
-                
+                        }
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(#colorLiteral(red: 0.9960784316062927, green: 0.4901960790157318, blue: 0.3333333432674408, alpha: 1)))
+                                    
+                        .frame(width: 319, height: 58))
+                        .frame(maxWidth:.infinity,  maxHeight:.infinity, alignment: .bottom)
+                        .padding(.bottom,90)
+                    
+                        .sheet(isPresented: $isShowingScanner){
+                            self.ScannerSheet
+                        }
+
+                                            
                 
             }
         }
     }
+    
 }
 
 struct ScanView_Previews: PreviewProvider {
