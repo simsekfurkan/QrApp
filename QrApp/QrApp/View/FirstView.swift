@@ -3,7 +3,7 @@
 //  QrApp
 //
 //  Created by Onur Şimşek on 6.09.2022.
-//
+
 
 import SwiftUI
 

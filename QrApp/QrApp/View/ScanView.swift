@@ -12,6 +12,11 @@ struct ScanView: View {
     @State private var isShowingScanner = false
     @State  var scannedCode : String = ""
     
+    
+    
+
+
+    
 
     var ScannerSheet : some View{
         CodeScannerView(
@@ -35,13 +40,6 @@ struct ScanView: View {
                         .padding(.leading,15)
                         .frame(maxWidth:.infinity,  maxHeight: .infinity, alignment: .top)
                         
-
-                    Image(systemName: "archivebox.fill")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .padding(.trailing, 30)
-                        .padding(.top,30)
-                        .frame(maxWidth:0,  maxHeight: .infinity, alignment: .topTrailing)
                         
                         
                     .foregroundColor(Color(#colorLiteral(red: 0.9960784316062927, green: 0.4901960790157318, blue: 0.3333333432674408, alpha: 1)))
